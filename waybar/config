@@ -1,24 +1,18 @@
 {
 
     "layer": "top",
-
     "position": "top",
-
-    //"height": 20,
-
     "margin-left": 10,
     "margin-bottom": 0,
     "margin-right": 10,
-
-    "spacing": 5, // Gaps between modules (4px)
-
+    "spacing": 5,
     "modules-left": [
         "hyprland/workspaces",
-        "temperature",
+        "temperature"
     ],
     "modules-center": [
         "clock#date",
-	"custom/weather",
+	"custom/weather"
     ],
     "modules-right": [
         "backlight",
@@ -58,11 +52,8 @@
     },
 
     "temperature": {
-        // "thermal-zone": 1,
         "interval": 4,
-        //"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": " {temperatureC}°C",
         "format-critical": "  {temperatureC}°C",
         "format": "{icon}  {temperatureC}°C",
         "format-icons": ["", "", ""],
@@ -115,7 +106,6 @@
         "format": "{icon} {percent}%",
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
-        //"format-icons": ["", ""],
         "format-icons": ["", ""],
         "on-scroll-down": "brightnessctl -d amdgpu_bl1 s 5%-",
         "on-scroll-up": "brightnessctl -d amdgpu_bl1 s +5%"
@@ -150,7 +140,6 @@
 
     "cpu": {
         "interval": 1,
-        //"format": " {}%", // Icon: microchip
         "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
         "max-length": 13,
         "min-length": 13
@@ -170,22 +159,20 @@
             "7": "七",
             "8": "八",
             "9": "九",
-            "10": "十",
+            "10": "十"
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
         "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
         "sort-by-number": true,
-        "active-only": false,
+        "active-only": false
     },
 
     "pulseaudio": {
-        "scroll-step": 3, // %, can be a float
+        "scroll-step": 3,
         "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        //"format-source": "{volume}% ",
-        //"format-source-muted": "",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
