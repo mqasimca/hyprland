@@ -27,3 +27,8 @@ fi
 if [ ! -d ~/.config/walker ]; then
   ln -sf $(pwd)/walker ~/.config/walker
 fi
+
+# Link wlogout folder to ~/.config/wlogout, if it doesn't exist
+if [ ! -d ~/.config/wlogout ]; then
+  ln -sf $(pwd)/wlogout ~/.config/wlogout
+fi
