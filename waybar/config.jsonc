@@ -33,7 +33,7 @@
         "format-alt-click": "click-right",
         "interval": 3600,
         "exec": "curl -s 'https://wttr.in/Toronto?format=1'",
-        "exec-if": "sleep 3; ping wttr.in -c1"
+        "exec-if": "sleep 7; ping wttr.in -c1"
     },
     "clock#date": {
         "format": "{:%A %e %b %I:%M}",

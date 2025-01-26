@@ -51,25 +51,21 @@ white = "0xECEFF4"
 [font]
 size = 17
 
+[font.normal]
+family = "monospace"
+style = "Regular"
+
 [font.bold]
-# family = "MesloLGS Nerd Font Mono"
-family = "CaskaydiaCove Nerd Font"
+family = "monospace"
 style = "Bold"
 
-[font.bold_italic]
-family = "CaskaydiaCove Nerd Font"
-# family = "MesloLGS Nerd Font Mono"
-style = "Bold Italic"
-
 [font.italic]
-family = "CaskaydiaCove Nerd Font"
-# family = "MesloLGS Nerd Font Mono"
+family = "monospace"
 style = "Italic"
 
-[font.normal]
-# family = "MesloLGS Nerd Font Mono"
-family = "CaskaydiaCove Nerd Font"
-style = "Regular"
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
