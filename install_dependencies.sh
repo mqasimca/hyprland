@@ -47,3 +47,20 @@ sudo pacman -S --needed \
     ttf-font-awesome \
     ttf-nerd-fonts-symbols \
     papirus-icon-theme
+
+# Build tools for hyprpm plugins (optional)
+sudo pacman -S --needed \
+    cmake \
+    meson \
+    cpio \
+    pkg-config \
+    git \
+    gcc
+
+# Power management
+sudo pacman -S --needed \
+    power-profiles-daemon
+
+# Menu system (for quick settings)
+sudo pacman -S --needed \
+    wofi

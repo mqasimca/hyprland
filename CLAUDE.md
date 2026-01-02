@@ -117,3 +117,17 @@ The dwindle layout is optimized for automatic grid-like tiling:
 - **Color Picker**: `Super+C` (hex), `Super+Shift+C` (rgb), `Super+Ctrl+C` (hsl)
 - **Window Pinning**: `Super+P` pins window to all workspaces
 - **GPU Monitoring**: Waybar shows GPU usage and temperature
+- **Quick Settings**: `Super+Q` opens wofi menu for toggling blur, animations, gaps, DND
+- **Power Profiles**: `Super+Alt+P` switches between performance/balanced/power-saver
+- **Do Not Disturb**: `Super+D` toggles mako notification muting
+- **Session Management**: `Super+Alt+S` saves, `Super+Alt+R` shows session info
+- **Enhanced Screenshots**: OCR (`Super+Alt+Print`), Annotate (`Super+Ctrl+Print`), Delayed (`Alt+Print`)
+
+## Scripts
+
+Custom scripts are located in `hypr/scripts/`:
+- `quick-settings.sh` - Wofi-based settings toggle menu
+- `dnd-toggle.sh` - Do Not Disturb toggle for mako
+- `power-menu.sh` - Power profile switching
+- `session-save.sh` - Save current window layout
+- `session-restore.sh` - Show saved session info

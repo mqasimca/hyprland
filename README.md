@@ -137,6 +137,11 @@ hyprctl reload
 | `Super + Ctrl + C` | Color picker (hsl) |
 | `Super + V` | Clipboard history |
 | `Super + Shift + N` | Toggle night mode (warm colors) |
+| `Super + D` | Do Not Disturb toggle |
+| `Super + Q` | Quick settings menu |
+| `Super + Alt + P` | Power profile menu |
+| `Super + Alt + S` | Save session |
+| `Super + Alt + R` | Restore session info |
 
 ### System
 
@@ -156,3 +161,6 @@ hyprctl reload
 - **GPU Monitoring** - Waybar shows GPU usage and temperature
 - **Variable Frame Rate (VFR)** - Power saving when idle
 - **Adaptive Sync (VRR)** - Smooth visuals with compatible monitors
+- **Quick Settings** - Toggle blur, animations, gaps, DND via wofi menu
+- **Power Profiles** - Switch between performance/balanced/power-saver
+- **Session Management** - Save and view window layouts
