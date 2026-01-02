@@ -25,6 +25,12 @@ sudo pacman -S --needed \
     hyprlauncher \
     hyprcursor
 
+# Screenshot tools (OCR, annotation)
+sudo pacman -S --needed \
+    swappy \
+    tesseract \
+    tesseract-data-eng
+
 # Applications
 sudo pacman -S --needed \
     alacritty \

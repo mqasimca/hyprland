@@ -104,6 +104,11 @@ hyprctl reload
 | `Shift + Print` | Full screen, copy to clipboard |
 | `Super + Print` | Select region, save to file |
 | `Super + Shift + Print` | Full screen, save to file |
+| `Super + Alt + Print` | OCR screenshot (extract text to clipboard) |
+| `Super + Ctrl + Print` | Annotate screenshot (opens swappy) |
+| `Alt + Print` | Delayed screenshot (3 seconds) |
+
+> **Note:** OCR requires `tesseract` and annotation requires `swappy`. Install with `./install_dependencies.sh`.
 
 ### Volume Control
 
