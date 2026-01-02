@@ -152,7 +152,7 @@ hyprctl reload
 
 ## Features
 
-- **Catppuccin Mocha** theme across all applications
+- **Catppuccin Mocha** theme across all applications (waybar, alacritty, wofi, mako, hyprlock)
 - **Window Swallowing** - Terminal hides when launching GUI apps from it
 - **Scratchpad** - Quick dropdown workspace for temporary windows
 - **Submaps** - Resize and move modes for easier window management
