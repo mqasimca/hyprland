@@ -77,6 +77,15 @@ hyprctl reload
 | `Super + 1-9, 0` | Switch to workspace 1-10 |
 | `Super + Shift + 1-9, 0` | Move window to workspace 1-10 |
 
+### Scratchpad (Dropdown Workspace)
+
+| Keybind | Action |
+|---------|--------|
+| `Super + S` | Toggle scratchpad |
+| `Super + Shift + S` | Move window to scratchpad |
+
+> **Tip:** To move a window back from scratchpad, open it with `Super + S`, then use `Super + Shift + 1-0` to send it to a workspace.
+
 ### Screenshots
 
 | Keybind | Action |
@@ -117,5 +126,12 @@ hyprctl reload
 | Keybind | Action |
 |---------|--------|
 | `Super + L` | Lock screen |
-| `Super + Shift + L` | Power menu (shutdown/reboot/logout) |
 | `Super + I` | Show system info |
+
+## Features
+
+- **Catppuccin Mocha** theme across all applications
+- **Window Swallowing** - Terminal hides when launching GUI apps from it
+- **Scratchpad** - Quick dropdown workspace for temporary windows
+- **Variable Frame Rate (VFR)** - Power saving when idle
+- **Adaptive Sync (VRR)** - Smooth visuals with compatible monitors
