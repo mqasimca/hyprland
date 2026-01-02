@@ -4,7 +4,7 @@ Personal Hyprland configuration files.
 
 ## Keybindings
 
-> **Note:** `Super` refers to the Windows/Meta key.
+> **Note:** `Super` refers to the **Windows key** (⊞) on most keyboards, or the **Command key** (⌘) on Mac.
 
 ### Applications
 
