@@ -74,8 +74,10 @@
         "format-alt": "{alt}: {}",
         "format-alt-click": "click-right",
         "interval": 3600,
-        "exec": "curl -s 'https://wttr.in/Toronto?format=1'",
-        "exec-if": "sleep 7; ping wttr.in -c1"
+        "exec": "curl -s 'https://wttr.in/Toronto?format=%c+%t'",
+        "exec-if": "ping -c1 wttr.in >/dev/null 2>&1",
+        "tooltip-format": "Toronto Weather",
+        "on-click": "xdg-open 'https://wttr.in/Toronto'"
     },
     "clock#date": {
         "format": "{:%A %e %b %I:%M}",
