@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies
-bash install_dependencies.sh
+#bash install_dependencies.sh
 
 # Create Screenshots directory
 mkdir -p ~/Pictures/Screenshots
@@ -25,3 +25,4 @@ fi
 if [ ! -d ~/.config/mako ]; then
   ln -sf $(pwd)/mako ~/.config/mako
 fi
+
