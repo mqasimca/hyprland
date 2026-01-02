@@ -2,7 +2,7 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/weather", "clock#date"],
-    "modules-right": ["cpu", "custom/gpu", "memory", "disk", "pulseaudio", "network", "tray", "custom/power"],
+    "modules-right": ["cpu", "custom/gpu", "custom/gpu-temp", "memory", "disk", "pulseaudio", "network", "tray", "custom/power"],
     "hyprland/workspaces": {
         "format": "{id} {windows}",
         "workspace-taskbar": {
@@ -63,6 +63,13 @@
         "return-type": "",
         "interval": 2
     },
+    "custom/gpu-temp": {
+        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        "format": " {}°C",
+        "return-type": "",
+        "interval": 5,
+        "tooltip": false
+    },
     "disk": {
         "interval": 30,
         "format": "󰋊 {percentage_used}%",
@@ -83,33 +90,6 @@
         "format": "{:%A %e %b %I:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "today-format": "<b>{}</b>"
-    },
-    "backlight": {
-        "device": "amdgpu_bl1",
-        "format": "{icon} {percent}%",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl -d amdgpu_bl1 s 5%-",
-        "on-scroll-up": "brightnessctl -d amdgpu_bl1 s +5%"
-    },
-    "battery": {
-        "interval": 2,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
     },
     "network": {
         "format-wifi": " {essid} ({signalStrength}%)",

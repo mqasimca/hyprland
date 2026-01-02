@@ -47,6 +47,7 @@ hyprctl reload
 | `Super + Shift + F` | Toggle fullscreen |
 | `Super + Ctrl + F` | Toggle floating mode |
 | `Super + J` | Toggle split direction (horizontal/vertical) |
+| `Super + P` | Pin window to all workspaces |
 | `Super + Arrow Keys` | Move focus (left/right/up/down) |
 | `Super + Shift + Arrow Keys` | Move window (left/right/up/down) |
 | `Super + Left Mouse Button` | Drag to move window |
@@ -69,6 +70,15 @@ hyprctl reload
 | `Super + Tab` | Cycle through grouped windows |
 | `Super + Shift + Tab` | Cycle through grouped windows (reverse) |
 | `Super + Ctrl + Arrow Keys` | Move window into group (direction) |
+
+### Submaps (Modes)
+
+| Keybind | Action |
+|---------|--------|
+| `Super + R` | Enter **resize mode** (use arrow keys, Escape to exit) |
+| `Super + M` | Enter **move mode** (use arrow keys, Escape to exit) |
+
+> **Tip:** In resize/move mode, use arrow keys freely without holding Super. Press Escape or Enter to exit.
 
 ### Workspaces
 
@@ -117,7 +127,9 @@ hyprctl reload
 
 | Keybind | Action |
 |---------|--------|
-| `Super + C` | Color picker |
+| `Super + C` | Color picker (hex) |
+| `Super + Shift + C` | Color picker (rgb) |
+| `Super + Ctrl + C` | Color picker (hsl) |
 | `Super + V` | Clipboard history |
 | `Super + Shift + N` | Toggle night mode (warm colors) |
 
@@ -133,5 +145,9 @@ hyprctl reload
 - **Catppuccin Mocha** theme across all applications
 - **Window Swallowing** - Terminal hides when launching GUI apps from it
 - **Scratchpad** - Quick dropdown workspace for temporary windows
+- **Submaps** - Resize and move modes for easier window management
+- **Screen Dimming** - Screen dims before locking (4.5 min idle)
+- **Smart Window Rules** - Spotify→WS9, Discord→WS10, games auto-fullscreen
+- **GPU Monitoring** - Waybar shows GPU usage and temperature
 - **Variable Frame Rate (VFR)** - Power saving when idle
 - **Adaptive Sync (VRR)** - Smooth visuals with compatible monitors

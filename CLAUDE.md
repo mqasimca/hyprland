@@ -106,3 +106,14 @@ The dwindle layout is optimized for automatic grid-like tiling:
 - `smart_resizing = true` - Intelligent resize direction detection
 
 **Result**: Opening 4 windows automatically creates a 2x2 grid layout. Use `Super + J` to manually toggle split direction when needed.
+
+## Key Features
+
+- **Window Swallowing**: Terminals hide when launching GUI apps (`misc.conf`)
+- **Scratchpad**: `Super+S` toggles dropdown workspace, `Super+Shift+S` moves window to it
+- **Submaps**: `Super+R` for resize mode, `Super+M` for move mode (arrow keys, Escape to exit)
+- **Screen Dimming**: Dims at 4.5 min, locks at 5 min (`hypridle.conf`)
+- **Smart Window Rules**: Spotify→WS9, Discord→WS10, games auto-fullscreen
+- **Color Picker**: `Super+C` (hex), `Super+Shift+C` (rgb), `Super+Ctrl+C` (hsl)
+- **Window Pinning**: `Super+P` pins window to all workspaces
+- **GPU Monitoring**: Waybar shows GPU usage and temperature
