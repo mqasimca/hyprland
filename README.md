@@ -46,6 +46,7 @@ hyprctl reload
 | `Super + K` | Close active window |
 | `Super + Shift + F` | Toggle fullscreen |
 | `Super + Ctrl + F` | Toggle floating mode |
+| `Super + J` | Toggle split direction (horizontal/vertical) |
 | `Super + Arrow Keys` | Move focus (left/right/up/down) |
 | `Super + Shift + Arrow Keys` | Move window (left/right/up/down) |
 | `Super + Left Mouse Button` | Drag to move window |

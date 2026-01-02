@@ -26,3 +26,9 @@ sudo pacman -S --needed \
     hyprshutdown \
     hyprsysteminfo \
     hyprcursor
+
+# Fonts and icons for Waybar
+sudo pacman -S --needed \
+    ttf-font-awesome \
+    ttf-nerd-fonts-symbols \
+    papirus-icon-theme

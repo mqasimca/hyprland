@@ -1,0 +1,69 @@
+{
+  "window": {
+    "width": 600,
+    "height": 400,
+    "anchor": "center",
+    "margin_top": 0,
+    "margin_bottom": 0,
+    "margin_left": 0,
+    "margin_right": 0,
+    "show_descriptions": true,
+    "show_paths": false,
+    "show_icons": true,
+    "show_search": true,
+    "show_actions": true,
+    "show_border": true,
+    "border_width": 2,
+    "use_gtk_colors": false,
+    "use_custom_css": false,
+    "max_entries": 8
+  },
+  "theme": {
+    "colors": {
+      "window_bg": "#1e1e2e",
+      "border": "#cba6f7",
+      "search_bg": "#313244",
+      "search_bg_focused": "#45475a",
+      "search_text": "#cdd6f4",
+      "search_text_focused": "#f5e0dc",
+      "item_bg": "#1e1e2e",
+      "item_bg_hover": "#313244",
+      "item_bg_selected": "#45475a",
+      "item_name": "#cdd6f4",
+      "item_name_hover": "#f5e0dc",
+      "item_name_selected": "#cba6f7",
+      "item_description": "#9399b2",
+      "item_description_hover": "#bac2de",
+      "item_description_selected": "#a6adc8",
+      "item_path": "#6c7086",
+      "item_path_hover": "#7f849c",
+      "item_path_selected": "#9399b2"
+    },
+    "corners": {
+      "window": 14,
+      "search": 10,
+      "items": 8
+    },
+    "spacing": {
+      "search_margin": 12,
+      "search_padding": 10,
+      "item_margin": 4,
+      "item_padding": 8
+    },
+    "typography": {
+      "search_font_size": 16,
+      "item_name_font_size": 14,
+      "item_description_font_size": 11,
+      "item_path_font_size": 10,
+      "item_path_font_family": "monospace"
+    }
+  },
+  "finder": {
+    "show_hidden": false
+  },
+  "web_search": {
+    "enabled": true,
+    "engine": "duckduckgo",
+    "prefixes": ["?", "!"]
+  }
+}

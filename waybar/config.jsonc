@@ -1,18 +1,48 @@
 {
     "position": "top",
-    "modules-left": ["hyprland/workspaces", "temperature", "cpu", "memory"],
-    "modules-center": [ "custom/weather", "clock#date"],
-    "modules-right": ["backlight", "battery", "pulseaudio", "network", "custom/power"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/weather", "clock#date"],
+    "modules-right": ["cpu", "custom/gpu", "memory", "disk", "pulseaudio", "network", "tray", "custom/power"],
+    "hyprland/workspaces": {
+        "format": "{id} {windows}",
+        "workspace-taskbar": {
+            "enable": true,
+            "format": "{icon}",
+            "icon-size": 18,
+            "icon-theme": "Papirus-Dark"
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3]
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 50,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "🌎 $1",
+            "(.*) - Visual Studio Code": "󰨞 $1",
+            "(.*)Alacritty": " $1"
+        }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true
+    },
     "clock": {
-      "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+      "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "temperature": {
         "interval": 4,
         "critical-threshold": 80,
-        "format-critical": "  {temperatureC}°C",
+        "format-critical": "  {temperatureC}°C",
         "format": "{icon}  {temperatureC}°C",
-        "format-icons": ["", "", ""],
+        "format-icons": ["", "", ""],
         "max-length": 7,
         "min-length": 7,
         "on-click": "xsensors"
@@ -25,7 +55,19 @@
     },
     "memory": {
         "interval": 30,
-        "format": "  {used:0.2f} / {total:0.0f} GB"
+        "format": "  {used:0.2f} / {total:0.0f} GB"
+    },
+    "custom/gpu": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "󰢮 {}%",
+        "return-type": "",
+        "interval": 2
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/home",
+        "tooltip-format": "Home: {used} used / {free} free\nTotal: {total}"
     },
     "custom/weather": {
         "format": "{}",
@@ -38,15 +80,14 @@
     "clock#date": {
         "format": "{:%A %e %b %I:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "today-format": "<b>{}</b>",
-	      "on-click": "gsimplecal"
+        "today-format": "<b>{}</b>"
     },
     "backlight": {
         "device": "amdgpu_bl1",
         "format": "{icon} {percent}%",
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
-        "format-icons": ["", ""],
+        "format-icons": ["", ""],
         "on-scroll-down": "brightnessctl -d amdgpu_bl1 s 5%-",
         "on-scroll-up": "brightnessctl -d amdgpu_bl1 s +5%"
     },
@@ -58,45 +99,45 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "",
+            "",
+            "",
+            "",
+            ""
         ]
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format": "",
-        "format-disconnected": "",
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format": "",
+        "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
         "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-        "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
-        "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
+        "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
         "interval": 10
     },
     "pulseaudio": {
         "scroll-step": 3,
         "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
         "on-click-right": "amixer sset Master toggle"

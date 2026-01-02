@@ -26,3 +26,8 @@ if [ ! -d ~/.config/mako ]; then
   ln -sf $(pwd)/mako ~/.config/mako
 fi
 
+# Link hyprlauncher folder to ~/.config/hyprlauncher
+if [ ! -d ~/.config/hyprlauncher ]; then
+  ln -sf $(pwd)/hyprlauncher ~/.config/hyprlauncher
+fi
+

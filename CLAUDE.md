@@ -23,6 +23,16 @@ This is a personal Hyprland (Wayland compositor) configuration repository for Ar
 ./setup.sh
 ```
 
+## Configuration Validation
+
+**IMPORTANT**: After every configuration change, you MUST verify there are no errors:
+
+```bash
+hyprctl configerrors
+```
+
+This command should return no errors. If errors are found, they must be fixed immediately before proceeding.
+
 ## Configuration Architecture
 
 The main Hyprland config (`hypr/hyprland.conf`) sources modular config files from `hypr/config/`:
@@ -47,13 +57,14 @@ Standalone Hyprland ecosystem configs in `hypr/`:
 - `hyprlock.conf` - Lock screen
 - `hypridle.conf` - Idle daemon
 - `hyprpaper.conf` - Wallpaper
-- `hyprlauncher.conf` - Application launcher
-- `hyprtoolkit.conf` - Toolkit settings
+- `hyprlauncher.conf` - Application launcher (deprecated in favor of hyprlauncher/ directory)
+- `hyprtoolkit.conf` - Toolkit theme settings (used by hyprlauncher and other Hyprland GUI apps)
 
 Other application configs:
 - `waybar/` - Status bar
 - `alacritty/` - Terminal emulator
 - `mako/` - Notification daemon
+- `hyprlauncher/` - Application launcher with Catppuccin Mocha theming
 
 ## Key Variables (defaults.conf)
 
@@ -63,3 +74,35 @@ Other application configs:
 - `$filemanager` = nautilus
 - `$textEditor` = code
 - `$applauncher` = hyprlauncher
+
+## Theming
+
+This configuration uses **Catppuccin Mocha** theme consistently across all applications:
+
+### Hyprtoolkit Theme
+The `hyprtoolkit.conf` file provides system-wide theming for Hyprland GUI applications:
+- **Format**: Flat key-value pairs (NOT sections like `colors { }`)
+- **Color format**: `0xAARRGGBB` (hex with alpha channel)
+- **Used by**: hyprlauncher, hyprlock, hyprsysteminfo, hyprshutdown, and other Hyprland GUI tools
+- **Font**: JetBrainsMono Nerd Font
+- **Icons**: Papirus-Dark
+
+### Hyprlauncher Theme
+The `hyprlauncher/config.json` applies Catppuccin Mocha colors to the application launcher:
+- Window styling: rounded corners, border, transparency
+- Color scheme: matches waybar and other components
+- Custom CSS available in `hyprlauncher/style.css` (currently not in use, using theme colors instead)
+
+## Window Layout
+
+### Dwindle Layout (Default)
+The dwindle layout is optimized for automatic grid-like tiling:
+
+**Key settings in `variables.conf`:**
+- `smart_split = true` - Splits based on window aspect ratio for balanced layouts
+- `force_split = 2` - Consistently splits right/bottom for predictable behavior
+- `default_split_ratio = 1.0` - Creates equal-sized windows by default
+- `preserve_split = true` - Maintains manual split adjustments
+- `smart_resizing = true` - Intelligent resize direction detection
+
+**Result**: Opening 4 windows automatically creates a 2x2 grid layout. Use `Super + J` to manually toggle split direction when needed.

@@ -1,6 +1,6 @@
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Fira Sans Semibold", "Symbols Nerd Font", "MesloLGMDZ Nerd Font", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 17px;  /* Slightly smaller font size */
     font-weight: 900;
     margin: 0;
@@ -17,14 +17,15 @@
     margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
-/* The whole bar */
+/* The whole bar - Glass morphism effect */
 #waybar {
-    background-color: transparent;
+    background: rgba(30, 30, 46, 0.85);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 0.5s;
     border-radius: 0px;
     margin: 0px 0px;
+    /* Note: backdrop-filter not supported in GTK3/Waybar */
 }
 
 window#waybar.hidden {
@@ -42,31 +43,40 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    color: @foreground;
-    background: #025939;
+    background: linear-gradient(45deg, #cba6f7, #f5c2e7);
+    color: #1e1e2e;
+    font-weight: bold;
 }
 
 #workspaces button:hover {
-    background: #333333;
+    background: linear-gradient(45deg, #89b4fa, #74c7ec);
+    /* transform not supported in GTK CSS */
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #f38ba8;
+    animation: urgent 1s ease-in-out infinite;
+}
+
+@keyframes urgent {
+    0% { background-color: #f38ba8; }
+    50% { background-color: #eba0ac; }
+    100% { background-color: #f38ba8; }
 }
 
 #workspaces {
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     border-radius: 14px;
     padding: 3px 7px;  /* Adjusted padding to reduce height */
 }
 
 #window {
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     font-size: 15px;   /* Slightly smaller font size */
     font-weight: 800;
     color: @foreground;
     border-radius: 14px;
-    padding: 3px 7px;  /* Reduced padding */
+    padding: 3px 15px;  /* More horizontal padding for window title */
     margin: 2px;
     opacity: 1;
 }
@@ -100,9 +110,23 @@ window#waybar.hidden {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     border-radius: 14px;
     padding: 7px;  /* Adjusted padding */
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for modules */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#backlight:hover {
+    background-color: rgba(69, 71, 90, 0.9);
+    /* transform not supported in GTK CSS */
 }
 
 #custom-screenshot_t {
@@ -112,27 +136,32 @@ window#waybar.hidden {
 }
 
 #tray {
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     border-radius: 14px;
     padding: 7px;  /* Adjusted padding */
 }
 
 #cpu {
     color: #fb958b;
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     padding: 7px;
 }
 
 #memory {
     color: #ebcb8b;
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     padding: 7px;
 }
 
 #custom-power {
-    background-color: #111827;
+    background-color: rgba(17, 24, 39, 0.7);
     border-radius: 14px;
     padding: 7px;
+}
+
+#custom-power:hover {
+    background-color: rgba(243, 139, 168, 0.9);
+    /* transform not supported in GTK CSS */
 }
 
 #custom-storage {
@@ -232,7 +261,20 @@ label:focus {
 }
 
 #disk {
-    background-color: #964b00;
+    color: #a3be8c;
+    background-color: rgba(17, 24, 39, 0.7);
+    padding: 7px;
+}
+
+#custom-gpu {
+    color: #88c0d0;
+    background-color: rgba(17, 24, 39, 0.7);
+    border-radius: 14px;
+    padding: 7px;
+}
+
+#custom-gpu:hover {
+    background-color: rgba(69, 71, 90, 0.9);
 }
 
 #bluetooth {
