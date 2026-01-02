@@ -8,15 +8,21 @@ sudo pacman -Syyu --needed \
     hyprpolkitagent \
     xdg-desktop-portal-hyprland \
     waybar \
-    rofi-wayland \
-    brightnessctl \
     wireplumber \
     playerctl \
     grim \
     slurp \
-    wl-clipboard
+    wl-clipboard \
+    cliphist \
+    mako
 
-# Optional packages (uncomment as needed)
-# sudo pacman -S --needed cliphist      # Clipboard history
-# sudo pacman -S --needed mako          # Notification daemon
-# sudo pacman -S --needed dunst         # Alternative notification daemon
+# Hyprland ecosystem tools
+sudo pacman -S --needed \
+    hyprlock \
+    hypridle \
+    hyprpicker \
+    hyprsunset \
+    hyprlauncher \
+    hyprshutdown \
+    hyprsysteminfo \
+    hyprcursor
