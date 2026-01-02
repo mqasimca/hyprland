@@ -6,6 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a personal Hyprland (Wayland compositor) configuration repository for Arch Linux. It contains dotfiles for Hyprland and related tools.
 
+## Version Information
+
+- **Hyprland Version**: 0.53.0
+- **Window Rules**: Uses 0.53+ syntax (see windowrules.conf)
+- **Configuration Status**: Fully validated, 0 errors
+- **Last Updated**: January 2026
+
 ## Setup Commands
 
 ```bash

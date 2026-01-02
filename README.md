@@ -1,6 +1,29 @@
 # Hyprland Configuration
 
-Personal Hyprland configuration files.
+Personal Hyprland configuration files for Hyprland 0.53.0.
+
+## Setup
+
+```bash
+# Install all dependencies (Arch Linux)
+./install_dependencies.sh
+
+# Set up symlinks to ~/.config/
+./setup.sh
+```
+
+## Verify Installation
+
+```bash
+# Check Hyprland version
+hyprctl version
+
+# Check for config errors
+hyprctl configerrors
+
+# Reload configuration
+hyprctl reload
+```
 
 ## Keybindings
 
