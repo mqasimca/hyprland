@@ -23,9 +23,18 @@ sudo pacman -S --needed \
     hyprpicker \
     hyprsunset \
     hyprlauncher \
-    hyprshutdown \
-    hyprsysteminfo \
     hyprcursor
+
+# Applications
+sudo pacman -S --needed \
+    alacritty \
+    firefox \
+    nautilus
+
+# Qt Wayland support
+sudo pacman -S --needed \
+    qt5-wayland \
+    qt6-wayland
 
 # Fonts and icons for Waybar
 sudo pacman -S --needed \

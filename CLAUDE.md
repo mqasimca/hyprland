@@ -83,7 +83,7 @@ This configuration uses **Catppuccin Mocha** theme consistently across all appli
 The `hyprtoolkit.conf` file provides system-wide theming for Hyprland GUI applications:
 - **Format**: Flat key-value pairs (NOT sections like `colors { }`)
 - **Color format**: `0xAARRGGBB` (hex with alpha channel)
-- **Used by**: hyprlauncher, hyprlock, hyprsysteminfo, hyprshutdown, and other Hyprland GUI tools
+- **Used by**: hyprlauncher, hyprlock, and other Hyprland GUI tools
 - **Font**: JetBrainsMono Nerd Font
 - **Icons**: Papirus-Dark
 
