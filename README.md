@@ -152,7 +152,7 @@ hyprctl reload
 
 ## Features
 
-- **Catppuccin Mocha** theme across all applications (waybar, alacritty, wofi, mako, hyprlock)
+- **Catppuccin Mocha** theme across all applications (waybar, alacritty, hyprlauncher, mako, hyprlock)
 - **Window Swallowing** - Terminal hides when launching GUI apps from it
 - **Scratchpad** - Quick dropdown workspace for temporary windows
 - **Submaps** - Resize and move modes for easier window management
@@ -161,6 +161,6 @@ hyprctl reload
 - **GPU Monitoring** - Waybar shows GPU usage and temperature
 - **Variable Frame Rate (VFR)** - Power saving when idle
 - **Adaptive Sync (VRR)** - Smooth visuals with compatible monitors
-- **Quick Settings** - Toggle blur, animations, gaps, DND via wofi menu
+- **Quick Settings** - Toggle blur, animations, gaps, DND via hyprlauncher menu
 - **Power Profiles** - Switch between performance/balanced/power-saver
 - **Session Management** - Save and view window layouts

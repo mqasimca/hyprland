@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Quick Settings Menu - Toggle various Hyprland settings via wofi
+# Quick Settings Menu - Toggle various Hyprland settings via hyprlauncher
 
+HEADER="== Quick Settings =="
+SEPARATOR="----------------------"
 OPTIONS="󰖨  Toggle Blur
 󰃟  Toggle Night Light
 󱡓  Toggle Animations
@@ -12,7 +14,11 @@ OPTIONS="󰖨  Toggle Blur
   Lock Screen
 󰗼  Logout"
 
-CHOICE=$(echo -e "$OPTIONS" | wofi --dmenu --prompt "Quick Settings" --width 300 --height 400)
+CHOICE=$(printf "%s\n%s\n%s" "$HEADER" "$SEPARATOR" "$OPTIONS" | hyprlauncher --dmenu)
+
+if [ -z "$CHOICE" ] || [ "$CHOICE" = "$HEADER" ] || [ "$CHOICE" = "$SEPARATOR" ]; then
+    exit 0
+fi
 
 case "$CHOICE" in
     *"Toggle Blur"*)

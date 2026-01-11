@@ -30,9 +30,3 @@ fi
 if [ ! -d ~/.config/hyprlauncher ]; then
   ln -sf $(pwd)/hyprlauncher ~/.config/hyprlauncher
 fi
-
-# Link wofi folder to ~/.config/wofi
-if [ ! -d ~/.config/wofi ]; then
-  ln -sf $(pwd)/wofi ~/.config/wofi
-fi
-

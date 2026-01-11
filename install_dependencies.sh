@@ -3,7 +3,6 @@
 # Core Hyprland packages (0.53+)
 sudo pacman -Syyu --needed \
     hyprland \
-    hyprland-guiutils \
     hyprpaper \
     hyprpolkitagent \
     xdg-desktop-portal-hyprland \
@@ -34,43 +33,69 @@ sudo pacman -S --needed \
 # Applications
 sudo pacman -S --needed \
     alacritty \
+    code \
     firefox \
-    nautilus
+    nautilus \
+    pavucontrol \
+    wlogout
+
+# CLI/utility deps used by scripts and Waybar
+sudo pacman -S --needed \
+    jq \
+    curl \
+    iputils \
+    xdg-utils \
+    libnotify \
+    alsa-utils
 
 # Qt Wayland support
 sudo pacman -S --needed \
     qt5-wayland \
     qt6-wayland
 
-# Fonts and icons for Waybar
+# GTK portals for file pickers/screenshare dialogs
 sudo pacman -S --needed \
+    xdg-desktop-portal-gtk
+
+# GTK/Qt theming tools (used by environment.conf)
+sudo pacman -S --needed \
+    kvantum \
+    qt5ct
+
+# Fonts and icons used by Waybar/Mako/Hyprlock
+sudo pacman -S --needed \
+    ttf-jetbrains-mono-nerd \
+    ttf-fira-sans \
+    ttf-meslo-nerd \
+    ttf-sarasa-gothic \
     ttf-font-awesome \
     ttf-nerd-fonts-symbols \
     papirus-icon-theme
-
-# Build tools for hyprpm plugins (optional)
-sudo pacman -S --needed \
-    cmake \
-    meson \
-    cpio \
-    pkg-config \
-    git \
-    gcc
 
 # Power management
 sudo pacman -S --needed \
     power-profiles-daemon
 
-# Menu system (for quick settings)
+# NVIDIA tooling (used by Waybar GPU modules)
 sudo pacman -S --needed \
-    wofi
+    nvidia-utils
 
-# GTK/Qt theming tools
-sudo pacman -S --needed \
-    nwg-look \
-    kvantum \
-    qt5ct \
-    qt6ct
+# Optional extras (uncomment as needed)
+# sudo pacman -S --needed \
+#     lm_sensors \
+#     xsensors
+#
+# sudo pacman -S --needed \
+#     cmake \
+#     meson \
+#     cpio \
+#     pkg-config \
+#     git \
+#     gcc
+#
+# sudo pacman -S --needed \
+#     nwg-look \
+#     qt6ct
 
 # Catppuccin themes (AUR - requires paru/yay)
 if command -v paru &> /dev/null; then
