@@ -26,6 +26,7 @@ sudo pacman -S --needed \
 
 # Screenshot tools (OCR, annotation)
 sudo pacman -S --needed \
+    hyprshot \
     swappy \
     tesseract \
     tesseract-data-eng

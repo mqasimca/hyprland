@@ -6,12 +6,14 @@
 
 /* Main window - glass morphism effect */
 window {
-    background-color: rgba(30, 30, 46, 0.88);
+    background-color: rgba(30, 30, 46, 0.9);
     background-image: linear-gradient(180deg, rgba(49, 50, 68, 0.35), rgba(30, 30, 46, 0.15)),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.03));
+    min-width: 1200px;
+    min-height: 720px;
     border: 1px solid rgba(203, 166, 247, 0.65);
-    border-radius: 14px;
-    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Search entry */
@@ -20,10 +22,10 @@ entry {
     background-image: linear-gradient(180deg, rgba(69, 71, 90, 0.45), rgba(49, 50, 68, 0.35));
     color: #cdd6f4;
     border: 1px solid rgba(69, 71, 90, 0.8);
-    border-radius: 12px;
+    border-radius: 14px;
     margin: 14px;
-    padding: 12px 16px;
-    font-size: 18px;
+    padding: 14px 18px;
+    font-size: 20px;
     transition: all 0.3s ease;
 }
 
@@ -40,38 +42,44 @@ entry:focus {
 listview {
     background-color: transparent;
     border: none;
-    margin: 0 10px 10px 10px;
+    margin: 0 16px 16px 16px;
+    padding: 6px;
 }
 
 /* App icons */
 listview image {
-    min-width: 32px;
-    min-height: 32px;
-    margin-right: 10px;
+    min-width: 64px;
+    min-height: 64px;
+    margin-right: 16px;
 }
 
 /* List items */
 listview > row {
-    background-color: transparent;
-    border-radius: 8px;
-    margin: 6px;
-    padding: 10px 12px;
+    background-color: rgba(30, 30, 46, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    margin: 10px;
+    padding: 18px 20px;
+    min-height: 88px;
     transition: all 0.2s ease;
 }
 
 listview > row:hover {
     background-image: linear-gradient(180deg, rgba(49, 50, 68, 0.85), rgba(49, 50, 68, 0.65));
+    border-color: rgba(203, 166, 247, 0.35);
 }
 
 listview > row:selected {
     background: linear-gradient(135deg, rgba(203, 166, 247, 0.95), rgba(245, 194, 231, 0.95));
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 /* Application name */
 .app-name {
     color: #cdd6f4;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     transition: color 0.2s ease;
 }
 
@@ -87,8 +95,9 @@ listview > row:selected .app-name {
 /* Application description */
 .app-description {
     color: #9399b2;
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 0;
+    margin-top: 0;
+    opacity: 0;
     transition: color 0.2s ease;
 }
 
