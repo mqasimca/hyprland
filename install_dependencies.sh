@@ -64,3 +64,27 @@ sudo pacman -S --needed \
 # Menu system (for quick settings)
 sudo pacman -S --needed \
     wofi
+
+# GTK/Qt theming tools
+sudo pacman -S --needed \
+    nwg-look \
+    kvantum \
+    qt5ct \
+    qt6ct
+
+# Catppuccin themes (AUR - requires paru/yay)
+if command -v paru &> /dev/null; then
+    paru -S --needed \
+        catppuccin-gtk-theme-mocha \
+        catppuccin-cursors-mocha \
+        kvantum-theme-catppuccin-git \
+        papirus-folders-catppuccin-git
+elif command -v yay &> /dev/null; then
+    yay -S --needed \
+        catppuccin-gtk-theme-mocha \
+        catppuccin-cursors-mocha \
+        kvantum-theme-catppuccin-git \
+        papirus-folders-catppuccin-git
+else
+    echo "No AUR helper found. Install paru or yay to install Catppuccin themes."
+fi

@@ -7,7 +7,7 @@ dynamic_padding = true
 decorations = "full"
 title = "one@"
 dynamic_title = true
-opacity = 0.85
+opacity = 0.35
 decorations_theme_variant = "Dark"
 
 [window.dimensions]
