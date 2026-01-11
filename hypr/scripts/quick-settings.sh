@@ -2,17 +2,29 @@
 
 # Quick Settings Menu - Toggle various Hyprland settings via hyprlauncher
 
-HEADER="== Quick Settings =="
-SEPARATOR="----------------------"
-OPTIONS="󰖨  Toggle Blur
+MODE="${1:-}"
+
+if [ "$MODE" = "--power" ]; then
+    HEADER="== Power Menu =="
+    SEPARATOR="----------------------"
+    OPTIONS="󰐥  Shutdown
+󰜉  Reboot
+󰒲  Suspend
+󰍹  Lock Screen
+󰈆  Logout"
+else
+    HEADER="== Quick Settings =="
+    SEPARATOR="----------------------"
+    OPTIONS="󰖨  Toggle Blur
 󰃟  Toggle Night Light
 󱡓  Toggle Animations
 󰍹  Toggle Dim Inactive
   Toggle Gaps
 󰂠  Do Not Disturb
   Power Profile
-  Lock Screen
-󰗼  Logout"
+󰍹  Lock Screen
+󰐥  Power Menu"
+fi
 
 CHOICE=$(printf "%s\n%s\n%s" "$HEADER" "$SEPARATOR" "$OPTIONS" | hyprlauncher --dmenu)
 
@@ -21,6 +33,18 @@ if [ -z "$CHOICE" ] || [ "$CHOICE" = "$HEADER" ] || [ "$CHOICE" = "$SEPARATOR" ]
 fi
 
 case "$CHOICE" in
+    *"Shutdown"*)
+        systemctl poweroff
+        ;;
+    *"Reboot"*)
+        systemctl reboot
+        ;;
+    *"Suspend"*)
+        systemctl suspend
+        ;;
+    *"Logout"*)
+        hyprctl dispatch exit
+        ;;
     *"Toggle Blur"*)
         STATE=$(hyprctl getoption decoration:blur:enabled | grep "int:" | awk '{print $2}')
         if [ "$STATE" = "1" ]; then
@@ -81,7 +105,7 @@ case "$CHOICE" in
     *"Lock Screen"*)
         hyprlock
         ;;
-    *"Logout"*)
-        wlogout
+    *"Power Menu"*)
+        ~/.config/hypr/scripts/quick-settings.sh --power
         ;;
 esac

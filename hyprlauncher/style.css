@@ -1,8 +1,14 @@
 /* Hyprlauncher Custom CSS - Catppuccin Mocha Theme */
 
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Font Awesome 6 Free", FontAwesome, monospace;
+}
+
 /* Main window - glass morphism effect */
 window {
     background-color: rgba(30, 30, 46, 0.88);
+    background-image: linear-gradient(180deg, rgba(49, 50, 68, 0.35), rgba(30, 30, 46, 0.15)),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.03));
     border: 1px solid rgba(203, 166, 247, 0.65);
     border-radius: 14px;
     box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
@@ -11,6 +17,7 @@ window {
 /* Search entry */
 entry {
     background-color: rgba(49, 50, 68, 0.75);
+    background-image: linear-gradient(180deg, rgba(69, 71, 90, 0.45), rgba(49, 50, 68, 0.35));
     color: #cdd6f4;
     border: 1px solid rgba(69, 71, 90, 0.8);
     border-radius: 12px;
@@ -22,6 +29,8 @@ entry {
 
 entry:focus {
     background-color: rgba(69, 71, 90, 0.85);
+    background-image: linear-gradient(180deg, rgba(88, 91, 112, 0.55), rgba(69, 71, 90, 0.4)),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.03));
     color: #f5e0dc;
     border-color: #cba6f7;
     box-shadow: 0 0 14px rgba(203, 166, 247, 0.4);
@@ -51,7 +60,7 @@ listview > row {
 }
 
 listview > row:hover {
-    background-color: rgba(49, 50, 68, 0.8);
+    background-image: linear-gradient(180deg, rgba(49, 50, 68, 0.85), rgba(49, 50, 68, 0.65));
 }
 
 listview > row:selected {

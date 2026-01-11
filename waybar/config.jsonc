@@ -8,7 +8,7 @@
         "workspace-taskbar": {
             "enable": true,
             "format": "{icon}",
-            "icon-size": 18,
+            "icon-size": 25,
             "icon-theme": "Papirus-Dark"
         },
         "persistent-workspaces": {
@@ -20,6 +20,7 @@
     },
     "hyprland/window": {
         "format": "{}",
+        "swap-icon-label": false,
         "separate-outputs": true,
         "max-length": 50,
         "rewrite": {
@@ -127,6 +128,6 @@
     "custom/power": {
         "format": " 󰐥 ",
         "tooltip": false,
-        "on-click": "wlogout"
+        "on-click": "~/.config/hypr/scripts/quick-settings.sh --power"
     }
   }

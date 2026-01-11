@@ -37,7 +37,6 @@ sudo pacman -S --needed \
     firefox \
     nautilus \
     pavucontrol \
-    wlogout
 
 # CLI/utility deps used by scripts and Waybar
 sudo pacman -S --needed \
