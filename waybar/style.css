@@ -273,14 +273,17 @@ label:focus {
     padding: 7px;
 }
 
-#custom-gpu {
+#custom-gpu,
+#custom-gpu-temp {
     color: #88c0d0;
     background-color: rgba(17, 24, 39, 0.7);
     border-radius: 14px;
     padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-#custom-gpu:hover {
+#custom-gpu:hover,
+#custom-gpu-temp:hover {
     background-color: rgba(69, 71, 90, 0.9);
 }
 
